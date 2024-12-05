@@ -21,7 +21,11 @@ while is_race_on:
 
     for turtle in all_turtles:
         if turtle.xcor()>900:
-            winner=(turtle.color())[0]
+            # Instead extracting pencolor from turtle.color()[0], you could use turtle.pencolor() as well 
+            # color() > returns both current pencolor and the current fillcolor
+            # So, either of the property you can use directly pencolor() / fillcolor()
+            # winner=(turtle.color())[0]
+            winner = turtle.pencolor()
             if winner==user_bet:
                 print("You Win!")
             else:
